@@ -26,10 +26,9 @@ dependencies:
 
   #Project's dependencies
   get:
-  google_fonts:
-  bezier_chart:
-  flutter_sparkline:
-  font_awesome_flutter:
+  smooth_page_indicator:
+  awesome_card:
+  fab_circular_menu:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -54,6 +53,15 @@ flutter:
   assets:
     - assets/images/
 
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+        - asset: assets/fonts/poppins/Poppins-Italic.ttf
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -66,16 +74,16 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+#     - family: Schyler
+#       fonts:
+#         - asset: fonts/Schyler-Regular.ttf
+#         - asset: fonts/Schyler-Italic.ttf
+#           style: italic
+#     - family: Trajan Pro
+#       fonts:
+#         - asset: fonts/TrajanPro.ttf
+#         - asset: fonts/TrajanPro_Bold.ttf
+#           weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
