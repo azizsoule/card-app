@@ -37,6 +37,7 @@ class OperationsScreen extends StatelessWidget {
                     backBackground: CardBackgrounds.black,
                     showBackSide: false,
                     cardType: CardType.visa,
+                    bankName: "UBA",
                   ),
                 ),
               ),

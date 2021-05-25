@@ -15,17 +15,19 @@ class WelcomeScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(Constants.SCREEN_PADDING),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
                 child: Image.asset("assets/images/undraw_unlock_24mb.png")),
             Container(
               child: Text(
-                "Welcome on ${Constants.APP_NAME} !",
+                "Bienvenue sur ${Constants.APP_NAME} !",
                 style: TextStyle(
                   color: AppColors.primary,
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
             SizedBox(

@@ -63,7 +63,7 @@ class OnBoardingScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: FButton(
-                            text: "skip",
+                            text: "Passer",
                             onPressed: controller.onSkip,
                           ),
                         ),
@@ -72,7 +72,7 @@ class OnBoardingScreen extends StatelessWidget {
                         ),
                         Expanded(
                           child: Button(
-                            text: "Next",
+                            text: "Suivant",
                             icon: Icons.arrow_forward,
                             onPressed: controller.onNext,
                           ),
@@ -84,7 +84,7 @@ class OnBoardingScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Button(
-                            text: "Get Started",
+                            text: "Commençons",
                             icon: Icons.arrow_forward,
                             onPressed: controller.onLastSlideSeen,
                           ),

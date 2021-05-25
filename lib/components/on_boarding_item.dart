@@ -7,7 +7,7 @@ class OnboardingItem extends StatelessWidget {
  final String title;
  final String subtitle;
 
- OnboardingItem({this.title = "Title", this.subtitle = "Lorem Ipsum is simply dummy text of the printing and typesetting industry", this.image = ""});
+ OnboardingItem({this.title = "Titre", this.subtitle = "Lorem Ipsum is simply dummy text of the printing and typesetting industry", this.image = ""});
 
   @override
   Widget build(BuildContext context) {

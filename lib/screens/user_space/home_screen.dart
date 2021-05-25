@@ -102,6 +102,7 @@ class HomeScreen extends StatelessWidget {
                           cardNumber: "1234 5678 9123 7878",
                           textName: "XOF 200 000",
                           cardType: CardType.visa,
+                          showShadow: true,
                         ),
                       ),
                     ),

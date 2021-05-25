@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
           children: [
             Container(
               child: Text(
-                "Welcome Back ${String.fromCharCode(Runes('\u{1F44B}👋👋👋👋👋').first)}",
+                "Bon retour parmi nous ${String.fromCharCode(Runes('\u{1F44B}👋👋👋👋👋').first)} !",
                 style: TextStyle(
                   color: AppColors.primary,
                   fontSize: 28,
@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
               height: 5,
             ),
             Text(
-              "I am so happy to see you. You can continue to login for manage your finance",
+              "Je suis si content de te revoir. Tu peux te connecter pour gérer tes finances",
               style: TextStyle(color: AppColors.third, fontSize: 15),
             ),
             SizedBox(
@@ -42,7 +42,7 @@ class LoginScreen extends StatelessWidget {
             Field(
               validator: Validators.notEmpty,
               textEditingController: controller.phoneController,
-              hintText: "Mobile",
+              hintText: "Numéro de téléphone",
             ),
             SizedBox(
               height: 20,
@@ -54,7 +54,7 @@ class LoginScreen extends StatelessWidget {
                     textEditingController: controller.passwordController,
                     validator: Validators.notEmpty,
                     hidden: true,
-                    hintText: "Password",
+                    hintText: "Mot de passe",
                   ),
                 ),
                 SizedBox(
@@ -94,7 +94,7 @@ class LoginScreen extends StatelessWidget {
             ),
             Button(
               onPressed: controller.onLoginButtonPressed,
-              text: 'Login',
+              text: 'Se connecter',
             ),
             SizedBox(
               height: 30,
