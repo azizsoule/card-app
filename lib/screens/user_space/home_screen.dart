@@ -1,4 +1,3 @@
-import 'package:awesome_card/awesome_card.dart';
 import 'package:card_app/components/action_widget.dart';
 import 'package:card_app/components/credit_card_widget.dart';
 import 'package:card_app/components/operation_widget.dart';

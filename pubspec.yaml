@@ -27,7 +27,6 @@ dependencies:
   #Project's dependencies
   get:
   smooth_page_indicator:
-  awesome_card:
   fab_circular_menu:
 
   # The following adds the Cupertino Icons font to your application.

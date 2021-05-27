@@ -3,6 +3,7 @@ import 'package:card_app/components/field.dart';
 import 'package:card_app/controllers/login_screen_controller.dart';
 import 'package:card_app/utils/app_colors.dart';
 import 'package:card_app/utils/constants.dart';
+import 'package:card_app/utils/text_styles.dart';
 import 'package:card_app/utils/validators.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,11 +23,7 @@ class LoginScreen extends StatelessWidget {
             Container(
               child: Text(
                 "Bon retour parmi nous ${String.fromCharCode(Runes('\u{1F44B}👋👋👋👋👋').first)} !",
-                style: TextStyle(
-                  color: AppColors.primary,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyles.noAppBarTitleStyle,
               ),
             ),
             SizedBox(

@@ -1,5 +1,6 @@
 import 'package:card_app/utils/app_colors.dart';
 import 'package:card_app/utils/constants.dart';
+import 'package:card_app/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatelessWidget {
@@ -13,12 +14,8 @@ class RegistrationScreen extends StatelessWidget {
           children: [
             Container(
               child: Text(
-                "Creer un nouveau compte",
-                style: TextStyle(
-                  color: AppColors.primary,
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
+                "Créer un nouveau compte",
+                style: TextStyles.noAppBarTitleStyle,
               ),
             ),
             SizedBox(
