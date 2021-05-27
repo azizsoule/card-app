@@ -1,298 +1,126 @@
-import 'package:card_app/models/credit_card.dart';
-import 'package:card_app/utils/app_colors.dart';
+import 'package:card_app/utils/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CreditCardWidget extends StatelessWidget {
-  final int index;
+  final String cardNumber;
+  final String expDate;
+  final String abrevBankName;
+  final String bankCompleteName;
+  final String amount;
 
-  final CreditCard creditCard;
-
-  CreditCardWidget({@required this.creditCard, this.index});
+  CreditCardWidget({
+    this.abrevBankName = "UBA",
+    this.bankCompleteName = "United Bank of Africa",
+    this.cardNumber = "**** **** **** 1234",
+    this.expDate = "12 / 2022",
+    this.amount = "1 600",
+  });
 
   @override
   Widget build(BuildContext context) {
-    // if (index == 0)
-      return Container(
-        padding: EdgeInsets.only(
-          left: 5,
-          right: 5,
+    return Container(
+      padding: EdgeInsets.all(20),
+      margin: EdgeInsets.all(
+        Constants.SCREEN_PADDING,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(Constants.APP_RADIUS),
+        gradient: LinearGradient(
+          colors: [Color(0xff323232), Color(0xff000000)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
-        child: Container(
-          width: MediaQuery.of(context).size.width - 55,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: AppColors.secondary,
-          ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    icon: Icon(
-                      Icons.credit_card,
-                      color: AppColors.primary,
-                    ),
-                    onPressed: () {},
-                    tooltip: 'KYC',
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(
-                        left: 15, top: 25, bottom: 10, right: 20),
-                    child: Text(
-                      'VISA',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.primary,
-                      ),
-                    ),
-                  ),
-                ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Text(
+                abrevBankName,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 10,
+                ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(
-                      left: 15,
-                    ),
-                    child: Text(
-                      '4562 1122 4595 7852',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.primary,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(
-                                left: 15,
-                                top: 25,
-                                bottom: 10,
-                                right: 20,
-                              ),
-                              child: Text(
-                                'CARD HOLDER',
-                                style: TextStyle(
-                                  fontSize: 7,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.primary,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(
-                                left: 15,
-                                top: 0,
-                                bottom: 10,
-                                right: 20,
-                              ),
-                              child: Text(
-                                'Ghulam',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.primary,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(
-                                left: 15,
-                                top: 25,
-                                bottom: 10,
-                                right: 20,
-                              ),
-                              child: Text(
-                                'Expiry Date',
-                                style: TextStyle(
-                                  fontSize: 7,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.primary,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(
-                                left: 15,
-                                top: 0,
-                                bottom: 10,
-                                right: 20,
-                              ),
-                              child: Text(
-                                '24/2020',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.primary,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              Text(
+                '|',
+                style: TextStyle(
+                  color: Colors.grey,
+                  letterSpacing: 10,
+                  fontSize: 10,
+                ),
+              ),
+              Text(
+                bankCompleteName,
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 10,
+                ),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 30,
+          ),
+
+          Text(
+            cardNumber,
+            style: TextStyle(
+              color: Colors.grey[300],
+              fontSize: 18,
+              wordSpacing: 15,
+              shadows: [
+                BoxShadow(
+                  blurRadius: 2,
+                  spreadRadius: 2,
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                expDate,
+                style: TextStyle(color: Colors.grey),
+              ),
+              Image.asset(
+                'assets/images/chip.png',
+                height: 25,
               ),
             ],
           ),
-        ),
-      );
-    // if (index == 1)
-    //   return Container(
-    //     padding: EdgeInsets.only(
-    //       left: 5,
-    //       right: 15,
-    //     ),
-    //     child: Container(
-    //       height: 175,
-    //       width: MediaQuery.of(context).size.width - 55,
-    //       decoration: BoxDecoration(
-    //           borderRadius: BorderRadius.circular(20),
-    //           gradient: LinearGradient(
-    //             colors: [
-    //               AppColors.primary,
-    //               AppColors.secondary,
-    //             ],
-    //             begin: Alignment.topCenter,
-    //             end: Alignment.centerRight,
-    //           )),
-    //       child: Column(
-    //         children: [
-    //           Row(
-    //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //             children: [
-    //               IconButton(
-    //                 icon: Icon(
-    //                   Icons.credit_card,
-    //                   color: AppColors.primary,
-    //                 ),
-    //                 onPressed: () {},
-    //                 tooltip: 'KYC',
-    //               ),
-    //               Container(
-    //                 padding: EdgeInsets.only(
-    //                   left: 15,
-    //                   top: 25,
-    //                   bottom: 10,
-    //                   right: 20,
-    //                 ),
-    //                 child: Text(
-    //                   'VISA',
-    //                   style: TextStyle(
-    //                     fontSize: 20,
-    //                     fontWeight: FontWeight.w700,
-    //                     color: AppColors.secondary,
-    //                   ),
-    //                 ),
-    //               ),
-    //             ],
-    //           ),
-    //           Column(
-    //             crossAxisAlignment: CrossAxisAlignment.start,
-    //             mainAxisAlignment: MainAxisAlignment.center,
-    //             children: [
-    //               Container(
-    //                 padding: EdgeInsets.only(
-    //                   left: 15,
-    //                   top: 10,
-    //                   bottom: 15,
-    //                 ),
-    //                 child: Text(
-    //                   '4562 1122 4595 7852',
-    //                   style: TextStyle(
-    //                     fontSize: 18,
-    //                     fontWeight: FontWeight.w600,
-    //                     color: AppColors.primary,
-    //                   ),
-    //                 ),
-    //               ),
-    //               Container(
-    //                 child: Row(
-    //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //                   children: [
-    //                     Column(
-    //                       crossAxisAlignment: CrossAxisAlignment.start,
-    //                       children: [
-    //                         Container(
-    //                           padding: EdgeInsets.only(
-    //                               left: 15, top: 25, bottom: 10, right: 20),
-    //                           child: Text(
-    //                             'CARD HOLDER',
-    //                             style: TextStyle(
-    //                               fontSize: 7,
-    //                               fontWeight: FontWeight.w500,
-    //                               color: AppColors.primary,
-    //                             ),
-    //                           ),
-    //                         ),
-    //                         Container(
-    //                           padding: EdgeInsets.only(
-    //                               left: 15, top: 0, bottom: 10, right: 20),
-    //                           child: Text(
-    //                             'Ghulam',
-    //                             style: TextStyle(
-    //                               fontSize: 20,
-    //                               fontWeight: FontWeight.w700,
-    //                               color: AppColors.primary,
-    //                             ),
-    //                           ),
-    //                         ),
-    //                       ],
-    //                     ),
-    //                     Column(
-    //                       crossAxisAlignment: CrossAxisAlignment.start,
-    //                       children: [
-    //                         Container(
-    //                           padding: EdgeInsets.only(
-    //                               left: 15, top: 25, bottom: 10, right: 20),
-    //                           child: Text(
-    //                             'Expiry Date',
-    //                             style: TextStyle(
-    //                               fontSize: 20,
-    //                               fontWeight: FontWeight.w700,
-    //                               color: AppColors.primary,
-    //                             ),
-    //                           ),
-    //                         ),
-    //                         Container(
-    //                           padding: EdgeInsets.only(
-    //                               left: 15, top: 0, bottom: 10, right: 20),
-    //                           child: Text(
-    //                             '24/2020',
-    //                             style: TextStyle(
-    //                               fontSize: 20,
-    //                               fontWeight: FontWeight.w700,
-    //                               color: AppColors.primary,
-    //                             ),
-    //                           ),
-    //                         ),
-    //                       ],
-    //                     ),
-    //                   ],
-    //                 ),
-    //               ),
-    //             ],
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   );
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            "$amount F CFA",
+            style: TextStyle(
+              color: Colors.grey[300],
+              fontSize: 18,
+              wordSpacing: 3,
+              fontWeight: FontWeight.bold,
+              shadows: [
+                BoxShadow(
+                  blurRadius: 2,
+                  spreadRadius: 2,
+                  color: Colors.black,
+                  offset: Offset(2, 2),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

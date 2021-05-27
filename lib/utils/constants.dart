@@ -6,4 +6,6 @@ class Constants {
 
   static double APP_RADIUS = 15;
 
+  static double CARDS_PAGE_VIEW_HEIGHT = 224;
+
 }

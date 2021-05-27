@@ -18,10 +18,11 @@ class ActionWidget extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.5),
-                borderRadius: BorderRadius.circular(Constants.APP_RADIUS),
-                border: Border.all(color: AppColors.primary)),
-            padding: EdgeInsets.all(15),
+              color: AppColors.primary.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(Constants.APP_RADIUS),
+              border: Border.all(color: AppColors.primary),
+            ),
+            padding: EdgeInsets.all(10),
             child: Icon(
               iconData,
               color: AppColors.secondary,
@@ -39,7 +40,6 @@ class ActionWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: AppColors.primary,
                 ),
               ),
             ),

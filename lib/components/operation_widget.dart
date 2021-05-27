@@ -1,10 +1,18 @@
 import 'package:card_app/utils/app_colors.dart';
+import 'package:card_app/utils/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class OperationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        color: AppColors.formFieldColor,
+        borderRadius: BorderRadius.circular(Constants.APP_RADIUS),
+        border: Border.all(color: AppColors.primary),
+      ),
       margin: EdgeInsets.only(bottom: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -15,9 +23,9 @@ class OperationWidget extends StatelessWidget {
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                     color: AppColors.primary,
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(15)),
                 child: Icon(
-                  Icons.account_circle,
+                  CupertinoIcons.creditcard_fill,
                   color: AppColors.secondary,
                 ),
               ),

@@ -18,7 +18,23 @@ class CardApp extends StatelessWidget {
       title: Constants.APP_NAME,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primarySwatch: MaterialColor(
+            AppColors.primary.value,
+            {
+              50: AppColors.primary,
+              100: AppColors.primary,
+              200: AppColors.primary,
+              300: AppColors.primary,
+              400: AppColors.primary,
+              500: AppColors.primary,
+              600: AppColors.primary,
+              700: AppColors.primary,
+              800: AppColors.primary,
+              900: AppColors.primary,
+            }
+        ),
         appBarTheme: AppBarTheme(
+          centerTitle: true,
           elevation: 0,
           backgroundColor: AppColors.secondary,
           iconTheme: IconThemeData(
@@ -26,7 +42,6 @@ class CardApp extends StatelessWidget {
           )
         ),
         fontFamily: "Poppins",
-        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: AppColors.secondary,
         pageTransitionsTheme: PageTransitionsTheme(

@@ -10,14 +10,21 @@ class UserSpace extends StatelessWidget {
   Widget build(BuildContext context) {
     UserSpaceController controller = Get.put(UserSpaceController());
     return Scaffold(
-      body: Obx(() => controller.bodies[controller.currentBody.value]),
+      body: Obx(
+        () => controller.bodies[controller.currentBody.value],
+      ),
       floatingActionButton: Obx(
         () => FabCircularMenu(
-          fabColor: AppColors.primary,
-          fabChild: Icon(
+          key: controller.fabKey,
+          fabCloseIcon: Icon(
+            Icons.close,
+            color: AppColors.secondary,
+          ),
+          fabOpenIcon: Icon(
             Icons.menu,
             color: AppColors.secondary,
           ),
+          fabColor: AppColors.primary,
           ringColor: AppColors.primary.withOpacity(0.7),
           children: List.generate(
             controller.menuIcons.length,
